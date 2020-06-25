@@ -1,23 +1,5 @@
 import React from 'react';
 class CartItem extends React.Component{
-
-    
-    increaseQuantity = ()=>{
-        console.log(this.state);
-        this.setState({
-            qty : this.state.qty + 1
-        },()=>{console.log(this.state)})
-    }
-    decreaseQuantity = ()=>{
-        console.log(this.state);
-        if(this.state.qty>=1)
-            {
-                this.setState({
-                    qty : this.state.qty - 1
-                },()=>{console.log(this.state)})
-            }
-        
-    }
     render(){
          /* Object destructuring */
         const {title,qty,price}=this.props.product;
@@ -39,8 +21,8 @@ class CartItem extends React.Component{
 
                     <div className="cart-item-actions">
                         {/*place buttons here*/}
-                        <img alt="decrease" className="action-icons" onClick={this.increaseQuantity} src="https://image.flaticon.com/icons/svg/992/992651.svg"/>
-                        <img alt="increase" className="action-icons" onClick={this.decreaseQuantity} src="https://image.flaticon.com/icons/svg/659/659892.svg"/>
+                        <img alt="decrease" className="action-icons" onClick={()=>this.props.increaseQuantity(this.props.product)} src="https://image.flaticon.com/icons/svg/992/992651.svg"/>
+                        <img alt="increase" className="action-icons" onClick={()=>this.props.decreaseQuantity(this.props.product)} src="https://image.flaticon.com/icons/svg/659/659892.svg"/>
                         <img alt="delete" className="action-icons" src="https://image.flaticon.com/icons/svg/1214/1214428.svg"/>
 
                     </div>
