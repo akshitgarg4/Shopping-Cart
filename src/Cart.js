@@ -1,86 +1,21 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-class Cart extends React.Component{
-    /* state defined for this component*/ 
-    constructor()
-    {
-        super();
-        this.state={
-            products:[
-                {
-                    price:9999,
-                    title:'Phone',
-                    img:'',
-                    qty:10,
-                    id:1
-                },
-                {
-                    price:99999,
-                    title:'Laptop',
-                    img:'',
-                    qty:4,
-                    id:2
-                },
-                {
-                    price:999,
-                    title:'Watch',
-                    img:'',
-                    qty:2,
-                    id:3
-                }
-
-            ]
-
-            
-        }
-    }
-    increaseQuantity=(product) =>
-    {
-        const {products}=this.state;
-        const index=products.indexOf(product);
-        products[index].qty+=1;
-        this.setState({
-            products:products
-        })
-    }
-    decreaseQuantity=(product) =>
-    {
-        const {products}=this.state;
-        const index=products.indexOf(product);
-        if(products[index].qty > 0)
-        {
-            products[index].qty-=1;
-            this.setState({
-                products:products
-            })
-        }
-        else{
-            return;
-        } 
-    }
-    deleteQuantity=(id)=>
-    {
-        const {products}=this.state;
-        const items = products.filter( (item) => item.id !== id )
-        this.setState({
-            products:items
-        })
-    }
-    render(){
-        const {products} =this.state;
+const Cart = (props)=> {
+   
+        const {products} = props;
         return(
 
         <div className="cart">
             {
                 products.map((product) => {
                     return (
-                        <CartItem product={product} key={product.id} deleteQuantity={this.deleteQuantity} increaseQuantity={this.increaseQuantity} decreaseQuantity={this.decreaseQuantity}/>
+                        <CartItem product={product} key={product.id} deleteQuantity={props.deleteQuantity} increaseQuantity={props.increaseQuantity} decreaseQuantity={props.decreaseQuantity}/>
                     );
                 })
             }
         </div>
         )
-    }
+    
 }
 export default Cart;
