@@ -1,6 +1,8 @@
 import React from 'react';
 import Cart from './Cart';
 import Navbar from './Navbar';
+import * as firebaes from 'firebase';
+
 
 
 class App extends React.Component {
@@ -38,6 +40,29 @@ class App extends React.Component {
            
        }
    }
+   /*
+
+   //to read from firestore
+   componentDidMount()
+   {
+       firebase.firestore().collection('products').get().then((snapshot)=>{
+           snapshot.docs.map((doc)=>{
+               console.log(doc.data());
+           })
+           const products=snapshot.docs.map((doc)=>{
+               const data =doc.data();
+               //we have to give unique id to each product and in db we haven't provided a unique id instead 
+               //a unique id is automaticaaly provided to each document in db so we give the id of document
+               //to the product it contains and then use it
+               data['id']=doc.id;
+               return data;
+           })
+           this.setState({
+               products:products
+           });
+       });
+   }
+   */
    increaseQuantity=(product) =>
    {
        const {products}=this.state;
