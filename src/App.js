@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from './Cart';
 import Navbar from './Navbar';
-import * as firebaes from 'firebase';
+//import * as firebaes from 'firebase';
 
 
 
@@ -116,7 +116,7 @@ class App extends React.Component {
       <div className="App">
         <Navbar count={this.getCount()}/>
         <Cart products={this.state.products} deleteQuantity={this.deleteQuantity} increaseQuantity={this.increaseQuantity} decreaseQuantity={this.decreaseQuantity}/>
-    <div style={{fontSize:20,padding:20}}>Total : {this.getTotal()}</div>
+    <div style={{fontSize:30,padding:20,marginLeft:'38%'}}>Total : {this.getTotal()}</div>
       </div>
     );
   }

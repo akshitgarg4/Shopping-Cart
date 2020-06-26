@@ -12,6 +12,7 @@ body {
   margin:20px 10px;
 }
 .cart-item .right-block{
+  width:200;
   padding:0 20px;
 }
 .cart-item-actions{
@@ -28,5 +29,6 @@ body {
 .cart{
   display: flex;
   flex-direction: column;
+  width:350
 }
 

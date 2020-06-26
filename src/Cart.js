@@ -6,7 +6,7 @@ const Cart = (props)=> {
         const {products} = props;
         return(
 
-        <div className="cart">
+        <div className="cart" style={{marginLeft:'35%'}}>
             {
                 products.map((product) => {
                     return (

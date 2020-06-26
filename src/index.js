@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import * as firebase from 'firebase';
-import 'firebase/friestore'
+//import * as firebase from 'firebase';
+//import 'firebase/friestore'
 import App from './App';
 
 
