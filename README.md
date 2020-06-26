@@ -1,5 +1,5 @@
 ## Shopping Cart
-Simple App made using ReactJS and Cloud Firestore where you can add/remove products in your cart or increase/decrease the product quantity.
+React App made using ReactJS and Cloud Firestore where you can add/remove products in your cart or increase/decrease the product quantity.
 
 ## Run Instructions:- 
 <ul>
